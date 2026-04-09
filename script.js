@@ -335,27 +335,27 @@ if (modalCreditos) {
 }
 
 const curatorsNotesPorMes = {
-    'Novembro 2024': {
+    '1': {
         itens: [
             'Milhões de videochamadas (Erasmus mode)',
             'Tarde a ver albunzinhos na Fnac'
         ]
     },
-    'Dezembro 2024': {
+    '2': {
         itens: [
             'Porto pela primeira vez juntas',
             'Panquecas salgadas, Ramen e Ape',
             'A nossa primeira troquinha de prendas :)'
         ]
     },
-    'Janeiro 2025': {
+    '3': {
         itens: [
             'A minha Primeira vez em Aveiro!',
             'Museu dos Brinquedos',
             'Jantar no Mário'
         ]
     },
-    'Fevereiro 2025': {
+    '4': {
         itens: [
             'Celebrar o teu aniversário pela primeira vez contigo',
             'O cheesecake que se derreteu todo',
@@ -364,7 +364,7 @@ const curatorsNotesPorMes = {
             'Descobri o teu vício de tirar pulgas aos gatinhos'
         ]
     },
-    'Março 2025': {
+    '5': {
         itens: [
              'Concertos: Más Influências e Valter Lobo',
              'Bom Jesus e almoço na Pausa Útil com o teu irmão',
@@ -372,7 +372,7 @@ const curatorsNotesPorMes = {
              'Estreia no Londrina'
         ]
     },
-    'Abril 2025': {
+    '6': {
         itens: [
             'Muitos lanchichos de Panick e folhados de pistácio (a nossa obsessao por esses mes)',
             'Eu bêbada a esconder-me para fazer poop',
@@ -380,7 +380,7 @@ const curatorsNotesPorMes = {
             'Ver os gatinhos a beira do Jardim (estavamos a ir buscar coisas para cozinhar...)',
         ]
     },
-    'Maio 2025': {
+    '7': {
         itens: [
             'Pizzas e Sushi caseiro',
             'Sushi Star pela primeira vez juntas ',
@@ -390,14 +390,14 @@ const curatorsNotesPorMes = {
             'O puré com camarão que fiz e tu amaste'
         ]
     },
-    'Junho 2025': {
+    '8': {
         itens: [
             'Praia da Vagueira e piquenique ao pôr do sol',
             'Jantar Italiano no restaurante mais barulhento de sempre',
             'Noite de máscaras'
         ]
     },
-    'Julho 2025': {
+    '9': {
         itens: [
             'Barcelos pela primeira vez',
             'O cone de ovos com Nutella....',
@@ -406,7 +406,7 @@ const curatorsNotesPorMes = {
             'Jogos sem Fronteiras'
         ]
     },
-    'Agosto 2025': {
+    '10': {
         itens: [
             'Paredes de Coura: muitos concertos e comidinha',
             'A frase icónica das Lambrini Girls (que ninguém se lembra)',
@@ -418,7 +418,7 @@ const curatorsNotesPorMes = {
             'Porto e a Francesinha que sabia a sopa (e o nosso poema!)'
         ]
     },
-    'Setembro 2025': {
+    '11': {
         itens: [
             'Muitas idas à Normal',
             'Jogo de Portugal com finos e tremoços',
@@ -427,7 +427,7 @@ const curatorsNotesPorMes = {
             'Sushi (ao fazer isto apercebo-me o quanto gastamos em sushi...)'
         ]
     },
-    'Outubro 2025': {
+    '12': {
         itens: [
             'O meu aniversário e sleepover com as girlies',
             'Tábua Trip de 1 ano!',
@@ -436,7 +436,7 @@ const curatorsNotesPorMes = {
             'Noite de Halloween: pintar abóboras, cookies, e o teu 1º jogo de terror no PC'
         ]
     },
-    'Novembro 2025': {
+    '13': {
         itens: [
             'Ver fotos antigas em casa da tua avó',
             'Encontramos a saia branca',
@@ -445,7 +445,7 @@ const curatorsNotesPorMes = {
             'AGRO: ver os animais e descobrir as cookies orgásmicas de Red Velvet'
         ]
     },
-    'Dezembro 2025': {
+    '14': {
         itens: [
             'Bastuço e Barcelos: vários night snacks',
             'Stranger Things Finale',
@@ -456,7 +456,7 @@ const curatorsNotesPorMes = {
             'Troca de prendinhas de Natal'
         ]
     },
-    'Janeiro 2026': {
+    '15': {
         itens: [
             'Mutus e lanchinhos',
             'Loni, gavi, marley jantar:) (e descobrir a personalidade do rui...)',
@@ -465,7 +465,7 @@ const curatorsNotesPorMes = {
             'Mais noodles'
         ]
     },
-    'Fevereiro 2026': {
+    '16': {
         itens: [
             '2º aniversário teu que passo contigo hihi!',
             'Color Hunting e sushi',
@@ -491,17 +491,11 @@ const closeInfoModalBtn = infoModal.querySelector('#close-info-modal');
 const infoModalTitle = infoModal.querySelector('#info-modal-title');
 const infoModalList = infoModal.querySelector('#info-modal-list');
 
-function obterMesAno(rotuloMes) {
-    const partes = rotuloMes.split(',');
-    return partes.length > 1 ? partes[1].trim() : rotuloMes.trim();
-}
-
-function abrirInfoModal(item) {
-    const mesAno = obterMesAno(item.mes);
-    const secao = curatorsNotesPorMes[mesAno];
+function abrirInfoModal(item, cardIndex) {
+    const secao = curatorsNotesPorMes[String(cardIndex + 1)];
+    infoModalTitle.textContent = "Curator's Note";
 
     if (secao) {
-        infoModalTitle.textContent = `Curator's Note - ${mesAno}`;
         infoModalList.innerHTML = `
             <section class="bts-section">
                 <ul>
@@ -510,7 +504,6 @@ function abrirInfoModal(item) {
             </section>
         `;
     } else {
-        infoModalTitle.textContent = `Curator's Note - ${mesAno}`;
         infoModalList.innerHTML = `
             <section class="bts-section">
                 <ul>
@@ -575,80 +568,43 @@ dados.forEach((item, index) => {
     const card = document.createElement('div');
     card.className = 'card';
     card.style.zIndex = index;
-    card.style.background = 'none';
 
-    const filmeLink = item.filmeLink;
     const albumLink = item.albumLink ? item.albumLink : `https://music.apple.com/search?term=${encodeURIComponent(item.album)}`;
-    const fotos = Array.isArray(item.fotoVossa) ? item.fotoVossa : [item.fotoVossa];
     card.innerHTML = `
-        <button class="curator-note-btn" type="button">Curator's Note</button>
+        <div class="card-header-badge">ENTRY #${index + 1 < 10 ? '0' + (index + 1) : index + 1}</div>
+        <button class="behind-btn" type="button">Review & Verdict</button>
+
         <div class="card-content">
             <div class="info-panel">
-                <h2>${item.titulo}</h2>
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 24px; margin-top: 10px;">
-                    <div class="media-item" style="flex-direction: column; align-items: center;">
-                        <img src="${item.poster}" alt="Poster" class="poster-img" style="cursor:zoom-in;">
-                        <div style="text-align: center;">
-                            <strong>The Discovery</strong>
-                            <p><a href="${filmeLink}" target="_blank" class="media-link">${item.filme}</a></p>
+                <div class="media-container">
+                    <div class="media-column">
+                        <span class="column-title">THE DISCOVERY</span>
+                        <div class="poster-wrapper">
+                            <img src="${item.poster}" alt="Poster do filme ${item.filme}" class="poster-img media-cover">
                         </div>
+                        <a href="${item.filmeLink}" target="_blank" class="media-title-link">${item.filme}</a>
                     </div>
-                    <div class="media-item" style="flex-direction: column; align-items: center;">
-                        <img src="${item.capa}" alt="Capa Album">
-                        <div style="text-align: center;">
-                            <strong>The Reference</strong>
-                            <p><a href="${albumLink}" target="_blank" class="media-link">${item.album}</a></p>
+
+                    <div class="media-column">
+                        <span class="column-title">THE REFERENCE</span>
+                        <div class="poster-wrapper">
+                            <img src="${item.capa}" alt="Capa do album ${item.album}" class="album-img media-cover">
                         </div>
+                        <a href="${albumLink}" target="_blank" class="media-title-link">${item.album}</a>
                     </div>
                 </div>
-            </div>
-            <div class="photo-panel">
-                <div class="photo-track">
-                    ${fotos.map((foto, i) => `<img src="${foto}" alt="Foto ${i + 1} de ${item.mes}" class="photo-slide">`).join('')}
-                </div>
-                <button class="photo-nav photo-nav-prev" type="button" aria-label="Foto anterior">&#8249;</button>
-                <button class="photo-nav photo-nav-next" type="button" aria-label="Foto seguinte">&#8250;</button>
             </div>
         </div>
     `;
 
-    card.querySelector('.curator-note-btn').addEventListener('click', (event) => {
-        event.stopPropagation();
-        abrirInfoModal(item);
-    });
+    const synergyBtn = card.querySelector('.behind-btn');
 
-    const photoPanel = card.querySelector('.photo-panel');
-    const photoTrack = card.querySelector('.photo-track');
-    const prevBtn = card.querySelector('.photo-nav-prev');
-    const nextBtn = card.querySelector('.photo-nav-next');
-    const maxIndex = Math.max(fotos.length - 1, 0);
-    let currentIndex = 0;
-
-    function atualizarSlide() {
-        photoTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+    if (synergyBtn) {
+        synergyBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            abrirInfoModal(item, index);
+        });
     }
-
-    atualizarSlide();
-
-    nextBtn.addEventListener('click', (event) => {
-        event.stopPropagation();
-        if (maxIndex === 0) {
-            return;
-        }
-
-        currentIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
-        atualizarSlide();
-    });
-
-    prevBtn.addEventListener('click', (event) => {
-        event.stopPropagation();
-        if (maxIndex === 0) {
-            return;
-        }
-
-        currentIndex = currentIndex === 0 ? maxIndex : currentIndex - 1;
-        atualizarSlide();
-    });
 
     container.appendChild(card);
 });
