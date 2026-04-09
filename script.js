@@ -335,145 +335,22 @@ if (modalCreditos) {
 }
 
 const curatorsNotesPorMes = {
-    '1': {
-        itens: [
-            'Milhões de videochamadas (Erasmus mode)',
-            'Tarde a ver albunzinhos na Fnac'
-        ]
-    },
-    '2': {
-        itens: [
-            'Porto pela primeira vez juntas',
-            'Panquecas salgadas, Ramen e Ape',
-            'A nossa primeira troquinha de prendas :)'
-        ]
-    },
-    '3': {
-        itens: [
-            'A minha Primeira vez em Aveiro!',
-            'Museu dos Brinquedos',
-            'Jantar no Mário'
-        ]
-    },
-    '4': {
-        itens: [
-            'Celebrar o teu aniversário pela primeira vez contigo',
-            'O cheesecake que se derreteu todo',
-            "Pizza D'Artista e fomos Scameads",
-            'Troca de mimos de S. Valentim',
-            'Descobri o teu vício de tirar pulgas aos gatinhos'
-        ]
-    },
-    '5': {
-        itens: [
-             'Concertos: Más Influências e Valter Lobo',
-             'Bom Jesus e almoço na Pausa Útil com o teu irmão',
-             'Vício em Apple Crumble', 
-             'Estreia no Londrina'
-        ]
-    },
-    '6': {
-        itens: [
-            'Muitos lanchichos de Panick e folhados de pistácio (a nossa obsessao por esses mes)',
-            'Eu bêbada a esconder-me para fazer poop',
-            'Coisinha da Society',
-            'Ver os gatinhos a beira do Jardim (estavamos a ir buscar coisas para cozinhar...)',
-        ]
-    },
-    '7': {
-        itens: [
-            'Pizzas e Sushi caseiro',
-            'Sushi Star pela primeira vez juntas ',
-            'Moldar tricórnios e a tua Imposição de Insígnias',
-            'Um Enterro (finalmente bom para as duas) e muitos beijinhos bêbadas',
-            'Concerto do B-Fachada e Antu',
-            'O puré com camarão que fiz e tu amaste'
-        ]
-    },
-    '8': {
-        itens: [
-            'Praia da Vagueira e piquenique ao pôr do sol',
-            'Jantar Italiano no restaurante mais barulhento de sempre',
-            'Noite de máscaras'
-        ]
-    },
-    '9': {
-        itens: [
-            'Barcelos pela primeira vez',
-            'O cone de ovos com Nutella....',
-            'Mini férias em Aveiro: Praia do Mar Morto e banho de sal',
-            'Início oficial do nosso Rally de Sushi',
-            'Jogos sem Fronteiras'
-        ]
-    },
-    '10': {
-        itens: [
-            'Paredes de Coura: muitos concertos e comidinha',
-            'A frase icónica das Lambrini Girls (que ninguém se lembra)',
-            'Batatas fritas caríssimas, mas valeram a pena',
-            'Vender brincos',
-            'Fazer as unhas',
-            'Lanche com a minha família',
-            'Loureiros com as girlies',
-            'Porto e a Francesinha que sabia a sopa (e o nosso poema!)'
-        ]
-    },
-    '11': {
-        itens: [
-            'Muitas idas à Normal',
-            'Jogo de Portugal com finos e tremoços',
-            'Festa do Marley :))',
-            'Competição de finos em na festa de Soza',
-            'Sushi (ao fazer isto apercebo-me o quanto gastamos em sushi...)'
-        ]
-    },
-    '12': {
-        itens: [
-            'O meu aniversário e sleepover com as girlies',
-            'Tábua Trip de 1 ano!',
-            'Mais Sushi!',
-            'Defesa da tese da Bela',
-            'Noite de Halloween: pintar abóboras, cookies, e o teu 1º jogo de terror no PC'
-        ]
-    },
-    '13': {
-        itens: [
-            'Ver fotos antigas em casa da tua avó',
-            'Encontramos a saia branca',
-            'Noodles feitos do zero e Soju!!!',
-            'Porto, hambúrgueres e Tim Bernardes',
-            'AGRO: ver os animais e descobrir as cookies orgásmicas de Red Velvet'
-        ]
-    },
-    '14': {
-        itens: [
-            'Bastuço e Barcelos: vários night snacks',
-            'Stranger Things Finale',
-            'Starbucks e troquinha de prendas',
-            'Jantar com a Bela e o Duarte',
-            'French Toast de Tiramisu...',
-            'Muitas e muitas chamadinhas',
-            'Troca de prendinhas de Natal'
-        ]
-    },
-    '15': {
-        itens: [
-            'Mutus e lanchinhos',
-            'Loni, gavi, marley jantar:) (e descobrir a personalidade do rui...)',
-            'Pizzas caseiras com Aperol',
-            'O momento épico da Very Cool Chair ;)',
-            'Mais noodles'
-        ]
-    },
-    '16': {
-        itens: [
-            '2º aniversário teu que passo contigo hihi!',
-            'Color Hunting e sushi',
-            'Color Date com snacks',
-            'Dia dos Namorados em Viana <3',
-            'Late snack no Bastucini'
-        ]
-    }
+    '1': { itens: ['em processo....'] },
+    '2': { itens: ['em processo....'] },
+    '3': { itens: ['em processo....'] },
+    '4': { itens: ['em processo....'] },
+    '5': { itens: ['em processo....'] },
+    '6': { itens: ['em processo....'] },
+    '7': { itens: ['em processo....'] },
+    '8': { itens: ['em processo....'] },
+    '9': { itens: ['em processo....'] },
+    '10': { itens: ['em processo....'] },
+    '11': { itens: ['em processo....'] },
+    '12': { itens: ['em processo....'] },
+    '13': { itens: ['em processo....'] },
+    '14': { itens: ['em processo....'] },
+    '15': { itens: ['em processo....'] },
+    '16': { itens: ['em processo....'] }
 };
 
 const infoModal = document.createElement('div');
