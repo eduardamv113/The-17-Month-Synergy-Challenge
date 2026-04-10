@@ -234,6 +234,8 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
 }
 
 .main-header, .main-footer {
@@ -243,6 +245,27 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.main-header,
+#card-stack,
+.main-footer {
+    position: relative;
+    z-index: 2;
+}
+
+#cinematic-dust-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.dust-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 h1 { font-size: 4rem; color: var(--accent); text-transform: uppercase; letter-spacing: 4px; }
@@ -266,6 +289,50 @@ h1 { font-size: 4rem; color: var(--accent); text-transform: uppercase; letter-sp
     overflow: visible;
     display: block;
     padding: 28px 20px 16px;
+    transform: perspective(1400px) rotateX(0deg) rotateY(0deg) translateY(0);
+    transform-style: preserve-3d;
+    transition: box-shadow 180ms ease, border-color 180ms ease;
+    will-change: transform;
+}
+
+.card:hover {
+    border-color: rgba(212, 176, 92, 0.35);
+    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.72);
+}
+
+.card-content,
+.info-panel,
+.card-header-badge,
+.behind-btn,
+.media-cover,
+.media-title-link {
+    transform-style: preserve-3d;
+}
+
+.card-header-badge,
+.behind-btn,
+.media-cover {
+    backface-visibility: hidden;
+}
+
+.card-header-badge {
+    transform: translateZ(24px);
+}
+
+.behind-btn {
+    transform: translateX(-50%) translateZ(28px);
+}
+
+.info-panel {
+    transform: translateZ(16px);
+}
+
+.media-cover {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover .media-cover {
+    transform: translateZ(18px) scale(1.01);
 }
 
 .card-header-badge {

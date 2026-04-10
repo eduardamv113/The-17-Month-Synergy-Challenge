@@ -7,13 +7,7 @@ const dados = [
         poster: "images/roomwithaview.png",
         album: "Ella & Louis — Ella Fitzgerald & Louis Armstrong",
         albumLink: "https://music.apple.com/pt/album/ella-and-louis/1469584174",
-        capa: "images/ella.jpg",
-        fotoVossa: [
-            "images/nov24/2.png", 
-            "images/nov24/a.png", 
-            "images/nov24/b.jpg", 
-            "images/nov24/c.jpg"
-        ]
+        capa: "images/ella.jpg"
     },
     {
         mes: "Mês 02, Dezembro 2024",
@@ -23,12 +17,7 @@ const dados = [
         poster: "images/space.png",
         album: "The Blue Room EP — Coldplay",
         albumLink: "https://music.apple.com/pt/album/the-blue-room-ep/697044079",
-        capa: "images/blue.jpg",
-        fotoVossa: [
-            "images/dez24/1.png", "images/dez24/a.jpg", "images/dez24/b.jpg", 
-            "images/dez24/c.jpg", "images/dez24/d.jpg", "images/dez24/e.jpg", 
-            "images/dez24/f.jpg", "images/dez24/g.jpg", "images/dez24/h.jpg", "images/dez24/i.jpg"
-        ]
+        capa: "images/blue.jpg"
     },
     {
         mes: "Mês 03, Janeiro 2025",
@@ -38,11 +27,7 @@ const dados = [
         poster: "images/apartment.png",
         album: "What's Going On — Marvin Gaye",
         albumLink: "https://music.apple.com/pt/album/whats-going-on/1538081586",
-        capa: "images/marvi.jpg",
-        fotoVossa: [
-            "images/jan25/1.png", "images/jan25/a.jpg", "images/jan25/b.jpg", 
-            "images/jan25/c.jpg", "images/jan25/d.jpg", "images/jan25/e.jpg", "images/jan25/f.jpg"
-        ]
+        capa: "images/marvi.jpg"
     },
     {
         mes: "Mês 04, Fevereiro 2025",
@@ -52,12 +37,7 @@ const dados = [
         poster: "images/shop.png",
         album: "Thee Sacred Souls — Thee Sacred Souls",
         albumLink: "https://music.apple.com/pt/album/thee-sacred-souls/1620092975",
-        capa: "images/thee.png",
-        fotoVossa: [
-            "images/fev25/1.png", "images/fev25/a.jpg", "images/fev25/b.jpg", 
-            "images/fev25/c.jpg", "images/fev25/d.jpg", "images/fev25/e.jpg", 
-            "images/fev25/f.jpg", "images/fev25/g.jpg", "images/fev25/h.png"
-        ]
+        capa: "images/thee.png"
     },
     {
         mes: "Mês 05, Março 2025",
@@ -67,13 +47,7 @@ const dados = [
         poster: "images/it.png",
         album: "Chasing Yesterday — Noel Gallagher",
         albumLink: "https://music.apple.com/pt/album/chasing-yesterday-deluxe/1517620249",
-        capa: "images/yesterday.jpg",
-        fotoVossa: [
-            "images/mar25/1.png", "images/mar25/a.jpg", "images/mar25/b.jpg", 
-            "images/mar25/c.jpg", "images/mar25/d.jpg", "images/mar25/e.jpg", 
-            "images/mar25/f.jpg", "images/mar25/g.jpg", "images/mar25/h.jpg", 
-            "images/mar25/k.jpg", "images/mar25/l.png", "images/mar25/u.jpg"
-        ]
+        capa: "images/yesterday.jpg"
     },
     {
         mes: "Mês 06, Abril 2025",
@@ -83,11 +57,7 @@ const dados = [
         poster: "images/casablanca.png",
         album: "Everything You've Come To Expect — The Last Shadow Puppets",
         albumLink: "https://music.apple.com/us/album/everything-youve-come-to-expect-deluxe-edition/1165278698",
-        capa: "images/last.png",
-        fotoVossa: [
-            "images/abril25/1.png", "images/abril25/a.jpg", "images/abril25/b.jpg", 
-            "images/abril25/c.jpg", "images/abril25/d.jpg", "images/abril25/e.png"
-        ]
+        capa: "images/last.png"
     },
     {
         mes: "Mês 07, Maio 2025",
@@ -97,14 +67,7 @@ const dados = [
         poster: "images/dirty.png",
         album: "Rmcm - Ritchy Mitch & The Coal Miners",
         albumLink: "https://music.apple.com/us/album/rmcm/1663060232",
-        capa: "images/rmcm.jpg",
-        fotoVossa: [
-            "images/maio25/1.png", "images/maio25/a.jpg", "images/maio25/b.jpg",
-            "images/maio25/c.jpg", "images/maio25/d.jpg", "images/maio25/e.jpg",
-            "images/maio25/f.jpg", "images/maio25/g.jpg", "images/maio25/h.jpg",
-            "images/maio25/j.jpg", "images/maio25/k.jpg", "images/maio25/l.jpeg",
-            "images/maio25/u.jpg", "images/maio25/hj.jpg"
-        ]
+        capa: "images/rmcm.jpg"
     },
     {
         mes: "Mês 08, Junho 2025",
@@ -114,11 +77,7 @@ const dados = [
         poster: "images/bound.png",
         album: "Born Under a Bad Sign — Albert King",
         albumLink: "https://music.apple.com/us/album/born-under-a-bad-sign/1681210958?i=1681211118",
-        capa: "images/born.jpg",
-        fotoVossa: [
-            "images/junho25/1.png", "images/junho25/a.jpg", "images/junho25/b.jpg", 
-            "images/junho25/c.jpg", "images/junho25/d.jpg", "images/junho25/e.jpeg", "images/junho25/f.jpeg"
-        ]
+        capa: "images/born.jpg"
     },
     {
         mes: "Mês 09, Julho 2025",
@@ -128,13 +87,7 @@ const dados = [
         poster: "images/rose.png",
         album: "Hurry Up, We're Dreaming — M83",
         albumLink: "https://music.apple.com/us/album/hurry-up-were-dreaming/828259375",
-        capa: "images/hurry.jpg",
-        fotoVossa: [
-            "images/julho25/1.png", "images/julho25/a.jpg", "images/julho25/b.jpg", 
-            "images/julho25/c.jpg", "images/julho25/d.jpg", "images/julho25/e.jpg", 
-            "images/julho25/f.jpg", "images/julho25/g.jpg", "images/julho25/h.jpg", 
-            "images/julho25/i.jpg", "images/julho25/j.jpeg"
-        ]
+        capa: "images/hurry.jpg"
     },
     {
         mes: "Mês 10, Agosto 2025",
@@ -144,17 +97,7 @@ const dados = [
         poster: "images/bringing.png",
         album: "Virtue — The Voidz",
         albumLink: "https://music.apple.com/us/album/virtue/1337790882",
-        capa: "images/virtue.png",
-        fotoVossa: [
-            "images/agosto25/1.png", "images/agosto25/a.png", "images/agosto25/b.jpg", 
-            "images/agosto25/c.jpg", "images/agosto25/d.jpg", "images/agosto25/e.jpg", 
-            "images/agosto25/f.jpg", "images/agosto25/g.jpg", "images/agosto25/h.jpg", 
-            "images/agosto25/i.jpg",  "images/agosto25/k.jpg", 
-            "images/agosto25/l.jpg", "images/agosto25/m.jpg", "images/agosto25/n.jpg", 
-            "images/agosto25/o.jpg", "images/agosto25/p.jpeg", "images/agosto25/q.jpeg", 
-            "images/agosto25/r.jpeg", "images/agosto25/s.jpeg", "images/agosto25/t.jpeg", 
-            "images/agosto25/u.jpeg", "images/agosto25/v.jpeg", "images/agosto25/x.jpeg", "images/agosto25/z.jpeg"
-        ]
+        capa: "images/virtue.png"
     },
     {
         mes: "Mês 11, Setembro 2025",
@@ -164,12 +107,7 @@ const dados = [
         poster: "images/express.png",
         album: "Turn On the Bright Lights — Interpol",
         albumLink: "https://music.apple.com/us/album/turn-on-the-bright-lights-the-tenth-anniversary/1589218896",
-        capa: "images/interol.jpg",
-        fotoVossa: [
-            "images/setembro/1.png", "images/setembro/a.jpg", "images/setembro/b.jpg",
-            "images/setembro/c.jpg", "images/setembro/d.jpg", "images/setembro/e.jpg",
-            "images/setembro/f.jpg", "images/setembro/g.png"
-        ]
+        capa: "images/interol.jpg"
     },
     {
         mes: "Mês 12, Outubro 2025",
@@ -179,16 +117,7 @@ const dados = [
         poster: "images/hill.png",
         album: "Tapestry — Carole King",
         albumLink: "https://music.apple.com/us/album/tapestry/747087657",
-        capa: "images/carole.jpg",
-        fotoVossa: [
-            "images/out25/1.png", "images/out25/a.jpg", "images/out25/b.jpg",
-            "images/out25/c.jpg", "images/out25/d.jpg", "images/out25/e.jpg",
-            "images/out25/f.jpeg", "images/out25/g.jpeg", "images/out25/h.jpeg",
-            "images/out25/i.jpeg", "images/out25/k.jpeg", "images/out25/l.jpeg",
-            "images/out25/m.jpeg", "images/out25/n.jpeg", "images/out25/o.jpeg",
-            "images/out25/p.jpeg", "images/out25/q.jpeg", "images/out25/r.jpeg",
-            "images/out25/s.jpeg"
-        ]
+        capa: "images/carole.jpg"
     },
     {
         mes: "Mês 13, Novembro 2025",
@@ -198,15 +127,7 @@ const dados = [
         poster: "images/desert.png",
         album: "Milo Greene — Milo Greene",
         albumLink: "https://music.apple.com/us/album/milo-greene/541312919",
-        capa: "images/milo.jpg",
-        fotoVossa: [
-            "images/nov25/1.png", "images/nov25/a.png", "images/nov25/b.jpeg",
-            "images/nov25/c.jpeg", "images/nov25/d.jpeg", "images/nov25/e.jpeg",
-            "images/nov25/f.jpeg", "images/nov25/g.jpeg", "images/nov25/h.jpeg",
-            "images/nov25/i.jpeg", "images/nov25/j.jpeg", "images/nov25/k.jpeg",
-            "images/nov25/l.jpeg", "images/nov25/m.jpeg", "images/nov25/n.jpeg",
-            "images/nov25/o.jpeg", "images/nov25/p.jpeg"
-        ]
+        capa: "images/milo.jpg"
     },
     {
         mes: "Mês 14, Dezembro 2025",
@@ -216,16 +137,7 @@ const dados = [
         poster: "images/roman.png",
         album: "When You Dream — Don Luxe",
         albumLink: "https://music.apple.com/us/album/when-you-dream/1526726161?i=1526726408",
-        capa: "images/don.jpg",
-        fotoVossa: [
-            "images/dez25/1.png", "images/dez25/a.jpeg", "images/dez25/b.jpeg",
-            "images/dez25/c.jpeg", "images/dez25/d.jpeg", "images/dez25/e.jpeg",
-            "images/dez25/f.jpeg", "images/dez25/g.jpeg", "images/dez25/h.jpeg",
-            "images/dez25/i.jpeg", "images/dez25/j.jpeg", "images/dez25/k.jpeg",
-            "images/dez25/l.jpeg", "images/dez25/m.jpeg", "images/dez25/n.jpeg",
-            "images/dez25/o.jpeg", "images/dez25/p.jpeg", "images/dez25/q.jpeg",
-            "images/dez25/r.jpeg", "images/dez25/s.jpeg"
-        ]
+        capa: "images/don.jpg"
     },
     {
         mes: "Mês 15, Janeiro 2026",
@@ -235,11 +147,7 @@ const dados = [
         poster: "images/nausica.png",
         album: "First Breath After Coma — The Misadventures of Anthony Knivet",
         albumLink: "https://music.apple.com/us/album/the-misadventures-of-anthony-knivet/822025978",
-        capa: "images/breath.jpg",
-        fotoVossa: [
-            "images/jan26/1.png", "images/jan26/a.jpeg", "images/jan26/b.jpeg",
-            "images/jan26/c.jpeg", "images/jan26/d.jpeg", "images/jan26/e.jpeg"
-        ]
+        capa: "images/breath.jpg"
     },
     {
         mes: "Mês 16, Fevereiro 2026",
@@ -249,20 +157,7 @@ const dados = [
         poster: "images/wings.png",
         album: "Twin Fantasy — Car Seat Headrest",
         albumLink: "https://music.apple.com/us/album/twin-fantasy/1586483380",
-        capa: "images/twin.jpg",
-        fotoVossa: [
-            "images/fev26/1.png", "images/fev26/a.jpeg", "images/fev26/b.png",
-            "images/fev26/c.jpeg", "images/fev26/d.jpeg", "images/fev26/e.jpeg",
-            "images/fev26/f.jpeg", "images/fev26/g.jpeg", "images/fev26/h.jpeg",
-            "images/fev26/i.jpeg", "images/fev26/j.jpeg", "images/fev26/k.jpeg",
-            "images/fev26/l.jpeg", "images/fev26/m.jpeg", "images/fev26/mm.jpeg",
-            "images/fev26/n.jpeg", "images/fev26/nn.jpeg", "images/fev26/o.jpeg",
-            "images/fev26/oo.jpeg", "images/fev26/p.jpeg", "images/fev26/pp.jpeg",
-            "images/fev26/q.jpeg", "images/fev26/qq.jpeg", "images/fev26/r.jpeg",
-            "images/fev26/s.jpeg", "images/fev26/t.jpeg", "images/fev26/u.jpeg",
-            "images/fev26/uu.jpeg", "images/fev26/v.jpeg", "images/fev26/ww.jpeg",
-            "images/fev26/x.jpeg", "images/fev26/yy.jpeg", "images/fev26/z.jpeg"
-        ]
+        capa: "images/twin.jpg"
     },
     {
         mes: "Mês 17, Março 2026",
@@ -272,11 +167,7 @@ const dados = [
         poster: "images/stranger.png",
         album: "Then Play On — Fleetwood Mac",
         albumLink: "https://music.apple.com/us/album/then-play-on-expanded-edition-2013-remaster/1441329962",
-        capa: "images/playon.jpg",
-        fotoVossa: [
-            "images/mar26/1.png", "images/mar26/a.jpeg", "images/mar26/b.jpeg",
-            "images/mar26/c.jpeg", "images/mar26/d.jpeg", "images/mar26/e.jpeg"
-        ]
+        capa: "images/playon.jpg"
     },
     
 ];
@@ -441,6 +332,238 @@ posterModal.addEventListener('click', () => {
     posterModal.style.display = 'none';
 });
 
+function setupCinematicDust() {
+    if (typeof THREE === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    const dustLayer = document.createElement('div');
+    dustLayer.id = 'cinematic-dust-layer';
+    dustLayer.setAttribute('aria-hidden', 'true');
+    document.body.prepend(dustLayer);
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x0a0a0a, 0.03);
+
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 18;
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
+    renderer.domElement.className = 'dust-canvas';
+    renderer.domElement.style.opacity = '0.98';
+    dustLayer.appendChild(renderer.domElement);
+
+    const particleCount = 1300;
+    const positions = new Float32Array(particleCount * 3);
+    const seeds = new Float32Array(particleCount);
+    const depths = new Float32Array(particleCount);
+
+    for (let i = 0; i < particleCount; i += 1) {
+        const index = i * 3;
+        const depth = Math.random();
+
+        positions[index] = (Math.random() - 0.5) * 30;
+        positions[index + 1] = (Math.random() - 0.5) * 18;
+        positions[index + 2] = -Math.random() * 32;
+        seeds[i] = Math.random() * Math.PI * 2;
+        depths[i] = depth;
+    }
+
+    const basePositions = positions.slice();
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const glowCanvas = document.createElement('canvas');
+    glowCanvas.width = 64;
+    glowCanvas.height = 64;
+    const glowContext = glowCanvas.getContext('2d');
+    const glowGradient = glowContext.createRadialGradient(32, 32, 0, 32, 32, 32);
+    glowGradient.addColorStop(0, 'rgba(255, 244, 210, 1)');
+    glowGradient.addColorStop(0.33, 'rgba(255, 225, 120, 0.82)');
+    glowGradient.addColorStop(0.55, 'rgba(241, 196, 15, 0.55)');
+    glowGradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+    glowContext.fillStyle = glowGradient;
+    glowContext.fillRect(0, 0, 64, 64);
+
+    const particleMaterial = new THREE.PointsMaterial({
+        color: 0xf1c40f,
+        size: 0.2,
+        map: new THREE.CanvasTexture(glowCanvas),
+        transparent: true,
+        opacity: 0.58,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        sizeAttenuation: true
+    });
+
+    const beamCanvas = document.createElement('canvas');
+    beamCanvas.width = 256;
+    beamCanvas.height = 256;
+    const beamContext = beamCanvas.getContext('2d');
+    const beamGradient = beamContext.createRadialGradient(128, 128, 10, 128, 128, 128);
+    beamGradient.addColorStop(0, 'rgba(255, 248, 220, 0.26)');
+    beamGradient.addColorStop(0.28, 'rgba(241, 196, 15, 0.18)');
+    beamGradient.addColorStop(0.6, 'rgba(241, 196, 15, 0.08)');
+    beamGradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+    beamContext.fillStyle = beamGradient;
+    beamContext.fillRect(0, 0, 256, 256);
+
+    const dustField = new THREE.Points(geometry, particleMaterial);
+    scene.add(dustField);
+
+    const beamMaterial = new THREE.SpriteMaterial({
+        map: new THREE.CanvasTexture(beamCanvas),
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.45,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+    });
+
+    const projectorBeam = new THREE.Sprite(beamMaterial);
+    projectorBeam.scale.set(34, 22, 1);
+    projectorBeam.position.set(0, 0, -12);
+    scene.add(projectorBeam);
+
+    const mouse = {
+        x: 0,
+        y: 0,
+        targetX: 0,
+        targetY: 0
+    };
+
+    const resize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    const updatePointer = (event) => {
+        mouse.targetX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.targetY = -((event.clientY / window.innerHeight) * 2 - 1);
+    };
+
+    const resetPointer = () => {
+        mouse.targetX = 0;
+        mouse.targetY = 0;
+    };
+
+    window.addEventListener('resize', resize);
+    window.addEventListener('pointermove', updatePointer, { passive: true });
+    window.addEventListener('pointerleave', resetPointer);
+
+    const clock = new THREE.Clock();
+
+    const animate = () => {
+        const elapsedTime = clock.getElapsedTime();
+
+        mouse.x = THREE.MathUtils.lerp(mouse.x, mouse.targetX, 0.06);
+        mouse.y = THREE.MathUtils.lerp(mouse.y, mouse.targetY, 0.06);
+
+        camera.position.x = mouse.x * 1.2;
+        camera.position.y = mouse.y * 0.8;
+        camera.lookAt(0, 0, 0);
+
+        dustField.rotation.y = mouse.x * 0.18 + elapsedTime * 0.025;
+        dustField.rotation.x = mouse.y * 0.08;
+        projectorBeam.position.x = mouse.x * 0.8;
+        projectorBeam.position.y = mouse.y * 0.5;
+        projectorBeam.material.opacity = 0.34 + Math.abs(mouse.x) * 0.08;
+
+        const positionAttribute = geometry.getAttribute('position');
+
+        for (let i = 0; i < particleCount; i += 1) {
+            const index = i * 3;
+            const depth = depths[i];
+            const wave = elapsedTime * (0.22 + depth * 0.32) + seeds[i];
+            const sway = 0.24 + depth * 0.75;
+            const mouseLift = 1 - depth;
+
+            positionAttribute.array[index] = basePositions[index]
+                + Math.sin(wave) * (0.12 + depth * 0.28)
+                + mouse.x * sway * mouseLift * 1.35;
+            positionAttribute.array[index + 1] = basePositions[index + 1]
+                + Math.cos(wave * 1.2) * (0.12 + depth * 0.24)
+                + mouse.y * sway * mouseLift * 1.02;
+            positionAttribute.array[index + 2] = basePositions[index + 2]
+                + Math.sin(wave * 0.7) * (0.06 + depth * 0.15)
+                - Math.abs(mouse.x) * mouseLift * 1.6;
+        }
+
+        positionAttribute.needsUpdate = true;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+    };
+
+    resize();
+    animate();
+}
+
+setupCinematicDust();
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function setupCardTilt(card) {
+    if (prefersReducedMotion || typeof THREE === 'undefined') {
+        return;
+    }
+
+    const tiltState = {
+        currentX: 0,
+        currentY: 0,
+        targetX: 0,
+        targetY: 0,
+        rafId: 0
+    };
+
+    const animateTilt = () => {
+        tiltState.currentX = THREE.MathUtils.lerp(tiltState.currentX, tiltState.targetX, 0.12);
+        tiltState.currentY = THREE.MathUtils.lerp(tiltState.currentY, tiltState.targetY, 0.12);
+
+        card.style.transform = `perspective(1400px) rotateX(${tiltState.currentX}deg) rotateY(${tiltState.currentY}deg) translateY(-2px)`;
+
+        const stillAnimating = Math.abs(tiltState.currentX - tiltState.targetX) > 0.02 || Math.abs(tiltState.currentY - tiltState.targetY) > 0.02;
+
+        if (stillAnimating) {
+            tiltState.rafId = requestAnimationFrame(animateTilt);
+        } else {
+            card.style.transform = `perspective(1400px) rotateX(${tiltState.targetX}deg) rotateY(${tiltState.targetY}deg) translateY(-2px)`;
+            tiltState.rafId = 0;
+        }
+    };
+
+    const startAnimation = () => {
+        if (tiltState.rafId) {
+            return;
+        }
+
+        tiltState.rafId = requestAnimationFrame(animateTilt);
+    };
+
+    const resetTilt = () => {
+        tiltState.targetX = 0;
+        tiltState.targetY = 0;
+        startAnimation();
+    };
+
+    card.addEventListener('pointermove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const pointerX = (event.clientX - rect.left) / rect.width;
+        const pointerY = (event.clientY - rect.top) / rect.height;
+
+        tiltState.targetY = (pointerX - 0.5) * 12;
+        tiltState.targetX = -(pointerY - 0.5) * 8;
+        startAnimation();
+    });
+
+    card.addEventListener('pointerenter', startAnimation);
+    card.addEventListener('pointerleave', resetTilt);
+}
+
 dados.forEach((item, index) => {
     const card = document.createElement('div');
     card.className = 'card';
@@ -483,6 +606,7 @@ dados.forEach((item, index) => {
         });
     }
 
+    setupCardTilt(card);
     container.appendChild(card);
 });
 
