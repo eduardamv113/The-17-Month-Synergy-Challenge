@@ -57,7 +57,7 @@
 
 .main-footer {
     height: 100vh;
-    background-color: var(--bg-color);
+    background-color: transparent;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -285,11 +285,13 @@ h1 { font-size: 4rem; color: var(--accent); text-transform: uppercase; letter-sp
     border-radius: 18px;
     border: 1px solid #2d3240;
     background: radial-gradient(circle at top center, #212633 0%, #11131b 68%);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     overflow: visible;
     display: block;
     padding: 28px 20px 16px;
-    transform: perspective(1400px) rotateX(0deg) rotateY(0deg) translateY(0);
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    --tilt-lift: 0px;
+    transform: perspective(1400px) translateY(var(--tilt-lift)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
     transform-style: preserve-3d;
     transition: box-shadow 180ms ease, border-color 180ms ease;
     will-change: transform;
@@ -297,7 +299,6 @@ h1 { font-size: 4rem; color: var(--accent); text-transform: uppercase; letter-sp
 
 .card:hover {
     border-color: rgba(212, 176, 92, 0.35);
-    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.72);
 }
 
 .card-content,

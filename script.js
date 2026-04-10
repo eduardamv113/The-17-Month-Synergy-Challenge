@@ -333,7 +333,12 @@ posterModal.addEventListener('click', () => {
 });
 
 function setupCinematicDust() {
-    if (typeof THREE === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    if (typeof THREE === 'undefined') {
+        setupCinematicDustFallback();
         return;
     }
 
@@ -503,14 +508,115 @@ function setupCinematicDust() {
     animate();
 }
 
+function setupCinematicDustFallback() {
+    const dustLayer = document.createElement('div');
+    dustLayer.id = 'cinematic-dust-layer';
+    dustLayer.setAttribute('aria-hidden', 'true');
+    document.body.prepend(dustLayer);
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'dust-canvas';
+    dustLayer.appendChild(canvas);
+
+    const context = canvas.getContext('2d');
+    const particleCount = 220;
+    const particles = [];
+
+    const resize = () => {
+        canvas.width = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
+        canvas.height = window.innerHeight * Math.min(window.devicePixelRatio || 1, 2);
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+    };
+
+    for (let i = 0; i < particleCount; i += 1) {
+        particles.push({
+            x: Math.random(),
+            y: Math.random(),
+            z: Math.random(),
+            speed: 0.00012 + Math.random() * 0.00022,
+            size: 0.7 + Math.random() * 1.9,
+            drift: (Math.random() - 0.5) * 0.00035,
+            phase: Math.random() * Math.PI * 2
+        });
+    }
+
+    const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+
+    const updatePointer = (event) => {
+        mouse.targetX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.targetY = (event.clientY / window.innerHeight) * 2 - 1;
+    };
+
+    window.addEventListener('resize', resize);
+    window.addEventListener('pointermove', updatePointer, { passive: true });
+    resize();
+
+    const glow = (x, y, radius, alpha) => {
+        const gradient = context.createRadialGradient(x, y, 0, x, y, radius);
+        gradient.addColorStop(0, `rgba(255, 248, 220, ${alpha})`);
+        gradient.addColorStop(0.3, `rgba(241, 196, 15, ${alpha * 0.7})`);
+        gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+        context.fillStyle = gradient;
+        context.beginPath();
+        context.arc(x, y, radius, 0, Math.PI * 2);
+        context.fill();
+    };
+
+    const animate = (time) => {
+        mouse.x += (mouse.targetX - mouse.x) * 0.05;
+        mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        const width = canvas.width;
+        const height = canvas.height;
+        const mouseInfluenceX = mouse.x * width * 0.08;
+        const mouseInfluenceY = mouse.y * height * 0.06;
+
+        glow(width * 0.5 + mouseInfluenceX * 0.4, height * 0.42 + mouseInfluenceY * 0.35, width * 0.34, 0.18);
+
+        for (const particle of particles) {
+            particle.y -= particle.speed * (0.8 + particle.z * 1.4);
+            particle.x += particle.drift + mouseInfluenceX * 0.00002 * (1 - particle.z);
+
+            if (particle.y < -0.05) {
+                particle.y = 1.05;
+                particle.x = Math.random();
+                particle.z = Math.random();
+            }
+
+            if (particle.x < -0.05) particle.x = 1.05;
+            if (particle.x > 1.05) particle.x = -0.05;
+
+            const px = particle.x * width;
+            const py = particle.y * height;
+            const pulse = 0.55 + Math.sin(time * 0.0015 + particle.phase) * 0.25;
+            const size = particle.size * (0.55 + particle.z * 1.5) * pulse;
+            const alpha = 0.12 + particle.z * 0.35;
+
+            context.fillStyle = `rgba(241, 196, 15, ${alpha})`;
+            context.beginPath();
+            context.arc(px, py, size, 0, Math.PI * 2);
+            context.fill();
+        }
+
+        requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+}
+
 setupCinematicDust();
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function setupCardTilt(card) {
-    if (prefersReducedMotion || typeof THREE === 'undefined') {
+    if (prefersReducedMotion) {
         return;
     }
+
+    const lerp = (start, end, amount) => start + (end - start) * amount;
 
     const tiltState = {
         currentX: 0,
@@ -521,17 +627,20 @@ function setupCardTilt(card) {
     };
 
     const animateTilt = () => {
-        tiltState.currentX = THREE.MathUtils.lerp(tiltState.currentX, tiltState.targetX, 0.12);
-        tiltState.currentY = THREE.MathUtils.lerp(tiltState.currentY, tiltState.targetY, 0.12);
+        tiltState.currentX = lerp(tiltState.currentX, tiltState.targetX, 0.12);
+        tiltState.currentY = lerp(tiltState.currentY, tiltState.targetY, 0.12);
 
-        card.style.transform = `perspective(1400px) rotateX(${tiltState.currentX}deg) rotateY(${tiltState.currentY}deg) translateY(-2px)`;
+        card.style.setProperty('--tilt-x', `${tiltState.currentX}deg`);
+        card.style.setProperty('--tilt-y', `${tiltState.currentY}deg`);
+        card.style.setProperty('--tilt-lift', '-2px');
 
         const stillAnimating = Math.abs(tiltState.currentX - tiltState.targetX) > 0.02 || Math.abs(tiltState.currentY - tiltState.targetY) > 0.02;
 
         if (stillAnimating) {
             tiltState.rafId = requestAnimationFrame(animateTilt);
         } else {
-            card.style.transform = `perspective(1400px) rotateX(${tiltState.targetX}deg) rotateY(${tiltState.targetY}deg) translateY(-2px)`;
+            card.style.setProperty('--tilt-x', `${tiltState.targetX}deg`);
+            card.style.setProperty('--tilt-y', `${tiltState.targetY}deg`);
             tiltState.rafId = 0;
         }
     };
@@ -547,6 +656,7 @@ function setupCardTilt(card) {
     const resetTilt = () => {
         tiltState.targetX = 0;
         tiltState.targetY = 0;
+        card.style.setProperty('--tilt-lift', '0px');
         startAnimation();
     };
 
@@ -557,6 +667,7 @@ function setupCardTilt(card) {
 
         tiltState.targetY = (pointerX - 0.5) * 12;
         tiltState.targetX = -(pointerY - 0.5) * 8;
+        card.style.setProperty('--tilt-lift', '-2px');
         startAnimation();
     });
 
