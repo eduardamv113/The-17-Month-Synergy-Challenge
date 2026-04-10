@@ -1,3 +1,4 @@
+import './js/main.js';
 const dados = [
     {
         mes: "Mês 01, Novembro 2024",
