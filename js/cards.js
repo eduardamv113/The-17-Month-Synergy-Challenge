@@ -61,6 +61,32 @@ function setupCardTilt(card) {
 }
 
 function renderCards({ container, dados, openInfoModal, openPosterModal }) {
+    const activateMediaLink = (titleLink) => {
+        if (!titleLink) {
+            return;
+        }
+
+        const href = titleLink.getAttribute('href');
+
+        if (!href) {
+            return;
+        }
+
+        const linkScope = titleLink.closest('.card') || container;
+        linkScope.querySelectorAll('.media-title-link').forEach((link) => {
+            link.classList.remove('is-selected');
+        });
+        titleLink.classList.add('is-selected');
+
+        window.open(href, '_blank');
+    };
+
+    const handleMediaLinkInteraction = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        activateMediaLink(event.currentTarget);
+    };
+
     dados.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'card';
@@ -79,7 +105,7 @@ function renderCards({ container, dados, openInfoModal, openPosterModal }) {
                             <div class="poster-wrapper">
                                 <img src="${item.poster}" alt="Poster do filme ${item.filme}" class="poster-img media-cover">
                             </div>
-                            <a href="${item.filmeLink}" target="_blank" class="media-title-link">${item.filme}</a>
+                            <a href="${item.filmeLink}" target="_blank" rel="noopener noreferrer" class="media-title-link">${item.filme}</a>
                         </div>
 
                         <div class="media-column">
@@ -87,7 +113,7 @@ function renderCards({ container, dados, openInfoModal, openPosterModal }) {
                             <div class="poster-wrapper">
                                 <img src="${item.capa}" alt="Capa do album ${item.album}" class="album-img media-cover">
                             </div>
-                            <a href="${albumLink}" target="_blank" class="media-title-link">${item.album}</a>
+                            <a href="${albumLink}" target="_blank" rel="noopener noreferrer" class="media-title-link">${item.album}</a>
                         </div>
                     </div>
                 </div>
@@ -95,6 +121,7 @@ function renderCards({ container, dados, openInfoModal, openPosterModal }) {
         `;
 
         const synergyBtn = card.querySelector('.behind-btn');
+    const mediaTitleLinks = card.querySelectorAll('.media-title-link');
 
         if (synergyBtn) {
             synergyBtn.addEventListener('click', (event) => {
@@ -103,14 +130,27 @@ function renderCards({ container, dados, openInfoModal, openPosterModal }) {
             });
         }
 
+        mediaTitleLinks.forEach((link) => {
+            link.addEventListener('click', handleMediaLinkInteraction);
+        });
+
         setupCardTilt(card);
         container.appendChild(card);
     });
 
     container.addEventListener('click', (event) => {
+        const titleLink = event.target.closest('.media-title-link');
+
+        if (titleLink && container.contains(titleLink)) {
+            event.preventDefault();
+            event.stopPropagation();
+            activateMediaLink(titleLink);
+            return;
+        }
+
         if (event.target.classList.contains('poster-img')) {
             const src = event.target.getAttribute('src');
             openPosterModal(src);
         }
-    });
+    }, true);
 }

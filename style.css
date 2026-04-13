@@ -407,6 +407,13 @@ h1 { font-size: 4rem; color: var(--accent); text-transform: uppercase; letter-sp
     border-radius: 9px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+}
+
+.poster-wrapper .album-img {
+    cursor: default;
+}
+
+.poster-wrapper .poster-img {
     cursor: zoom-in;
 }
 
@@ -417,10 +424,38 @@ h1 { font-size: 4rem; color: var(--accent); text-transform: uppercase; letter-sp
     text-align: center;
     margin-top: 4px;
     line-height: 1.3;
+    position: relative;
+    z-index: 60;
+    pointer-events: auto !important;
+    cursor: pointer;
+    display: inline-block;
+    transform: translateZ(34px);
+    transition: color 180ms ease, transform 180ms ease, text-shadow 180ms ease;
 }
 
 .media-title-link:hover {
-    color: #d4b05c;
+    color: #ffd84d;
+    transform: translateZ(34px) translateY(-1px) scale(1.03);
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.35);
+}
+
+.media-title-link:focus-visible,
+.media-title-link.is-selected {
+    color: #f1c40f;
+    text-shadow: 0 0 12px rgba(241, 196, 15, 0.55);
+    animation: linkPop 220ms ease-out;
+}
+
+@keyframes linkPop {
+    0% {
+        transform: scale(0.96);
+    }
+    65% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 /*synergy button*/
 .behind-btn {
