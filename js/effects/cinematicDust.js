@@ -19,13 +19,21 @@ function setupCinematicDust() {
     const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
     camera.position.z = 18;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
-    renderer.domElement.className = 'dust-canvas';
-    renderer.domElement.style.opacity = '0.98';
-    dustLayer.appendChild(renderer.domElement);
+    let renderer;
+
+    try {
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0);
+        renderer.domElement.className = 'dust-canvas';
+        renderer.domElement.style.opacity = '0.98';
+        dustLayer.appendChild(renderer.domElement);
+    } catch (error) {
+        dustLayer.remove();
+        setupCinematicDustFallback();
+        return;
+    }
 
     const particleCount = 1300;
     const positions = new Float32Array(particleCount * 3);
