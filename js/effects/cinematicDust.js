@@ -28,6 +28,9 @@ function setupCinematicDust() {
         renderer.setClearColor(0x000000, 0);
         renderer.domElement.className = 'dust-canvas';
         renderer.domElement.style.opacity = '0.98';
+        renderer.domElement.style.width = '100%';
+        renderer.domElement.style.height = '100%';
+        renderer.domElement.style.display = 'block';
         dustLayer.appendChild(renderer.domElement);
     } catch (error) {
         dustLayer.remove();
@@ -119,6 +122,8 @@ function setupCinematicDust() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.domElement.style.width = '100%';
+        renderer.domElement.style.height = '100%';
     };
 
     const updatePointer = (event) => {
